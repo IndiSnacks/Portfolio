@@ -1,68 +1,61 @@
+@import "tailwindcss";
+
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --light-color: #FEF7E7;
+  --dark-color: #10100E;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-bg-body: #FEF7E7;
+  --color-text-default: #10100E;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.dark {
+  --color-bg-body: #10100E;
+  --color-text-default: #FEF7E7;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@font-face {
+  font-family: 'GeneralSans-Variable';
+  src: url('./assets/fonts/GeneralSans-Variable.woff2') format('woff2'),
+    url('../fonts/GeneralSans-Variable.woff') format('woff');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@font-face {
+  font-family: 'Recia-Variable';
+  src: url('../fonts/Recia-Variable.woff2') format('woff2'),
+    url('../fonts/Recia-Variable.woff') format('woff');
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: normal;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  body {
+    background-color: var(--color-bg-body);
+    color: var(--color-text-default);
+    font-family: 'Recia-Variable', sans-serif;
+    font-weight: 400;
   }
-  a:hover {
-    color: #747bff;
+
+  h1 {
+    font-family: 'GeneralSans-Variable', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
   }
-  button {
-    background-color: #f9f9f9;
+
+  /* Mobile breakpoint */
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1116px) {
+    h1 {
+      font-size: 2.25rem;
+    }
   }
 }
