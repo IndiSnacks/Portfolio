@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { navLinks } from "../Data/navData";
 import CrossIcon from "../assets/svg/crossIcon";
 
 interface MobileNavbarProps {
@@ -7,32 +8,6 @@ interface MobileNavbarProps {
 }
 
 export default function MobileNavbar({ hamOpen, hamToggle }: MobileNavbarProps) {
-  const navLinks = [
-    {
-      id: 'landing',
-      name: "SAHIL GATHE",
-      targetId: "landing",
-      type: "scroll",
-    },
-    {
-      id: 'projects',
-      name: "PROJECTS",
-      targetId: "projects",
-      type: "scroll",
-    },
-    {
-      id: 'resume',
-      name: "RESUME",
-      path: "/resume",
-      type: "route",
-    },
-    {
-      id: 'github',
-      name: "GITHUB",
-      path: "https://github.com/IndiSnacks",
-      type: "external",
-    }
-  ];
 
   const handelHamburger = () => {
     hamToggle();

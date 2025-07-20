@@ -3,6 +3,7 @@ import { useState } from "react";
 import NavIcon from './assets/svg/navIcon';
 import Logo from './assets/svg/logo';
 import MobileNavbar from './Components/MobileNavbar'
+import Navbar from './Components/Navbar';
 import Landing from './Pages/Landing';
 // import AboutMe from './Pages/AboutMe'
 import Projects from './Pages/Projects';
@@ -25,6 +26,10 @@ function App() {
           </button>
         </div>
         <MobileNavbar hamOpen={hamOpen} hamToggle={handleHam} />
+      </div>
+
+      <div className="hidden md:block">
+        <Navbar />
       </div>
       <Landing />
       <Projects />
