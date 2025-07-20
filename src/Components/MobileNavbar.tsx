@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import CrossIcon from "../assets/svg/crossIcon";
 
 interface MobileNavbarProps {
   hamOpen: boolean;
@@ -50,7 +51,7 @@ export default function MobileNavbar({ hamOpen, hamToggle }: MobileNavbarProps) 
       <>
         {navLinks.map((item, index) => {
           return (
-            <div key={index} className="text-start w-full px-4 py-1">
+            <div key={index} className="text-start w-full px-1 py-1">
               {item.type === 'external' ? (
                 <a
                   href={item.path}
@@ -87,12 +88,13 @@ export default function MobileNavbar({ hamOpen, hamToggle }: MobileNavbarProps) 
           onClick={handelHamburger}
         ></div>
       )}
-      <div className={`fixed top-0 left-1/2 w-screen h-screen ${hamOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+      <div className={`fixed top-0 left-1/3 w-screen h-screen ${hamOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}>
         <div
-          className={`bg-(--light-color) shadow-lg/50 w-1/2 h-screen flex flex-col transition-all duration-300 ease-in-out ${hamOpen ? "translate-x-0" : "translate-x-full"}`}>
+          className={`pt-[32px] px-[32px] bg-(--light-color) shadow-lg/50 w-2/3 h-screen flex flex-col transition-all duration-300 ease-in-out ${hamOpen ? "translate-x-0" : "translate-x-full"}`}>
           <div className="flex-row self-end">
-            <button><h1>DAY</h1></button>
-            <button onClick={handelHamburger} className=""><h1>HAM</h1></button>
+            <button onClick={handelHamburger} className="py-2 px-3">
+              <CrossIcon />
+            </button>
           </div>
           {renderNav()}
         </div>

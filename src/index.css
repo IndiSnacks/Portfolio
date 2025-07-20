@@ -2,10 +2,10 @@
 
 
 :root {
-  --light-color: #FEF7E7;
+  --light-color: #FFFAF0;
   --dark-color: #10100E;
 
-  --color-bg-body: #FEF7E7;
+  --color-bg-body: #FFFAF0;
   --color-text-default: #10100E;
 }
 
@@ -16,8 +16,8 @@
 
 @font-face {
   font-family: 'GeneralSans-Variable';
-  src: url('./assets/fonts/GeneralSans-Variable.woff2') format('woff2'),
-    url('../fonts/GeneralSans-Variable.woff') format('woff');
+  src: url('../public/fonts/GeneralSans-Variable.woff2') format('woff2'),
+    url('../public/fonts/GeneralSans-Variable.woff') format('woff');
   font-weight: 200 700;
   font-display: swap;
   font-style: normal;
@@ -25,8 +25,8 @@
 
 @font-face {
   font-family: 'Recia-Variable';
-  src: url('../fonts/Recia-Variable.woff2') format('woff2'),
-    url('../fonts/Recia-Variable.woff') format('woff');
+  src: url('../public/fonts/Recia-Variable.woff2') format('woff2'),
+    url('../public/fonts/Recia-Variable.woff') format('woff');
   font-weight: 300 700;
   font-display: swap;
   font-style: normal;
@@ -44,6 +44,12 @@
     font-family: 'GeneralSans-Variable', sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
+  }
+
+  p {
+    color: var(--color-text-default);
+    font-family: 'Recia-Variable', serif;
+    font-weight: 400;
   }
 
   /* Mobile breakpoint */
