@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <div className='hidden max-sm:flex flex-row'>
+      <div className='flex flex-row min-md:hidden'>
         <div className='flex items-center w-full justify-between'>
           <Logo />
           <button onClick={handleHam} className="py-2 px-3 ">

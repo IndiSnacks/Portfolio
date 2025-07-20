@@ -41,16 +41,27 @@ export default function Projects() {
       <>
         {projectData.map((item, index) => {
           return (
-            <div key={index} className="flex flex-col md:max-w-full md:flex-row lg:flex-col lg:max-w-1/2 pr-4 pb-12">
-              <img className="hight-auto md:max-w-2/5 md:pr-6 lg:max-w-full lg:p-0" src={item.img} />
-              <div>
+            <div key={index} className="flex flex-col md:flex-row lg:flex-col p-5 mb-12 md:mb-0
+               group
+               transition-all duration-300 ease-in-out
+               bg-[var(--light-color)] hover:bg-[var(--dark-color)]
+               text-[var(--dark-color)] hover:text-[var(--light-color)]
+               shadow-md border border-gray-200
+               hover:shadow-lg hover:border-gray-400
+              ">
+              <img
+                className="hight-auto md:max-w-2/5 md:pr-6 lg:pr-0 lg:max-w-full lg:grayscale
+                group-hover:grayscale-0"
+                src={item.img}
+              />
+              <div className="">
                 <div className="flex flex-row">
                   <h1 className="">{item.title}</h1>
                   <h1 className="mx-2 font-normal"> | </h1>
                   <h1 className="font-light">{item.year}</h1>
                 </div>
-                <h1 className="text-[#6B6B5D] text-base font-semibold pb-2">{item.role}</h1>
-                <p>
+                <h1 className="text-[#6B6B5D] group-hover:text-[var(--light-color)] text-base font-semibold pb-2">{item.role}</h1>
+                <p className="text-inherit">
                   <span className="text-2xl">{item.letter}</span>
                   {item.discription}
                 </p>
@@ -65,7 +76,8 @@ export default function Projects() {
   return (
     <div id="projects" className="h-fit py-5 flex-col text-start z-0">
       <h1 className="text-4xl">PROJECTS</h1>
-      <div className="flex flex-col lg:flex-row">
+      <div
+        className="flex flex-col md:flex-col md:gap-y-12 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-b-12 mt-4 ">
         {renderProjects()}
       </div>
     </div>
