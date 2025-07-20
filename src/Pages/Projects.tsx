@@ -43,11 +43,10 @@ export default function Projects() {
           return (
             <div key={index} className="flex flex-col md:flex-row lg:flex-col p-5 mb-12 md:mb-0
                group
-               transition-all duration-300 ease-in-out
+               transition-all duration-500 ease-in-out
                bg-[var(--light-color)] hover:bg-[var(--dark-color)]
                text-[var(--dark-color)] hover:text-[var(--light-color)]
-               shadow-md border border-gray-200
-               hover:shadow-lg hover:border-gray-400
+               shadow-lg 
               ">
               <img
                 className="hight-auto md:max-w-2/5 md:pr-6 lg:pr-0 lg:max-w-full lg:grayscale

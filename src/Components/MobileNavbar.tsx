@@ -9,9 +9,9 @@ interface MobileNavbarProps {
 export default function MobileNavbar({ hamOpen, hamToggle }: MobileNavbarProps) {
   const navLinks = [
     {
-      id: 'about',
-      name: "ABOUT ME",
-      targetId: "about",
+      id: 'landing',
+      name: "SAHIL GATHE",
+      targetId: "landing",
       type: "scroll",
     },
     {
