@@ -11,59 +11,77 @@ export default function Navbar() {
   };
 
   function renderNav() {
-    return navLinks.map((item, index) => {
-      return (
-        <div key={index}>
-          <div className="px-3 text-[var(--dark-color)] 
-            hover:text-[var(--light-color)] hover:bg-[var(--dark-color)]
-                /* Default state of the ::before pseudo-element */
-                before:content-['']
-                before:absolute
-                before:top-0
-                before:right-0                  
-                before:w-full
-                before:h-full
-                before:bg-[var(--dark-color)]
-                before:z-[-1]
-                before:origin-right 
-                before:scale-x-0 
-                before:transition-transform before:duration-300 before:ease-out
-                hover:before:scale-x-100 
-            ">
-            {item.type === 'external' ? (
-              <a
-                href={item.path}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <h1>{item.name}</h1>
-              </a>
-            ) : item.type === 'route' ? (
-              <Link
-                to={item.path}
-              >
-                <h1>{item.name}</h1>
-              </Link>
-            ) : (
-              <button
-                onClick={() => scrollToSection(item.targetId!)}
-              >
-                <h1>{item.name}</h1>
-              </button>
-            )}
+    return navLinks.map((item) => {
+      const commonNavItemClasses = `
+	        group relative overflow-hidden z-0
+          text-2xl
+	        px-3 py-1
+	        text-[var(--dark-color)]
+	        hover:text-[var(--light-color)] /* Text color change on hover */
+	        transition-colors duration-300 ease-in-out /* Smooth text color transition */
+	        
+	        /* === PSEUDO-ELEMENT STYLING FOR BACKGROUND FILL === */
+	        /* Default state of the ::before pseudo-element */
+	        before:content-['']
+	        before:absolute
+	        before:top-0
+	        before:right-0
+	        before:w-full  /* Full width */
+	        before:h-full  /* Full height */
+	        before:bg-[var(--dark-color)] {/* The fill color */}
+	        before:z-[-1]
+	        before:origin-right
+	        before:scale-x-0 {/* Start scaled down */}
+	        before:transition-transform before:duration-300 before:ease-out
+	        
+	        /* Hover state of the ::before pseudo-element */
+	        hover:before:scale-x-100 {/* Scale up on hover */}
+	      `;
 
-          </div>
-        </div>
-      )
-    })
+      if (item.type === 'external') {
+        return (
+          <a
+            key={item.id}
+            href={item.path}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={commonNavItemClasses}
+          >
+            <h1 className="relative z-10 text-2xl">{item.name}</h1>
+          </a>
+        );
+      } else if (item.type === 'route') {
+        return (
+          <Link
+            key={item.id}
+            to={item.path}
+            className={commonNavItemClasses}
+          >
+            <h1 className="relative z-10 text-2xl">{item.name}</h1>
+          </Link>
+        );
+      } else {
+        return (
+          <button
+            key={item.id}
+            onClick={() => scrollToSection(item.targetId!)}
+            className={`
+	              ${commonNavItemClasses} /* Apply common classes here */
+	              focus:outline-none  focus:bg-[var(--dark-color)] focus:text-[var(--light-color)]	            `}
+          >
+            <h1 className="relative z-10 text-2xl">{item.name}</h1>
+          </button>
+        );
+      }
+    });
   }
 
   return (
     <>
       <div className="w-full h-[2px] bg-[var(--dark-color)]"></div>
-      <div className="w-full flex flex-row justify-between px-3">
+      <nav className="w-full flex flex-row justify-between px-3 py-1 items-center">
         {renderNav()}
-      </div>
+      </nav>
       <div className="w-full h-[2px] bg-[var(--dark-color)]"></div>
     </>
   );

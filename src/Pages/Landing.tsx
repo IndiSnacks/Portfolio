@@ -1,6 +1,6 @@
 export default function Landing() {
   return (
-    <div id="landing" className="h-fit mt-4 flex-col text-start z-0">
+    <div id="landing" className="h-1/2 mt-4 flex-col text-start z-0">
       <h1 className="text-4xl">SAHIL GATHE</h1>
       <div className="flex flex-col lg:flex-row">
         <div className="pb-6 h-70 w-full lg:w-2/3 bg-(--dark-color) mr-5">

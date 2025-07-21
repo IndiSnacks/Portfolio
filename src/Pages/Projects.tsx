@@ -60,7 +60,8 @@ export default function Projects() {
               ">
                 <img
                   className="hight-auto md:max-w-2/5 md:pr-6 lg:pr-0 lg:max-w-full lg:grayscale
-                group-hover:grayscale-0"
+                   transition-all duration-500 ease-in-out
+                   group-hover:grayscale-0"
                   src={item.img}
                 />
                 <div className="">
@@ -69,7 +70,9 @@ export default function Projects() {
                     <h1 className="mx-2 font-normal"> | </h1>
                     <h1 className="font-light">{item.year}</h1>
                   </div>
-                  <h1 className="text-[#6B6B5D] group-hover:text-[var(--light-color)] text-base font-semibold pb-2">{item.role}</h1>
+                  <h1 className="text-[#6B6B5D] group-hover:text-[var(--light-color)] 
+                    transition-all duration-500 ease-in-out
+                    text-base font-semibold pb-2">{item.role}</h1>
                   <p className="text-inherit">
                     <span className="text-2xl">{item.letter}</span>
                     {item.discription}
@@ -84,10 +87,10 @@ export default function Projects() {
   }
 
   return (
-    <div id="projects" className="h-fit py-5 flex-col text-start z-0">
+    <div id="projects" className="h-fit py-25 flex-col text-start z-0">
       <h1 className="text-4xl">PROJECTS</h1>
       <div
-        className="flex flex-col md:flex-col md:gap-y-12 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-b-12 mt-4 ">
+        className="flex flex-col md:flex-col md:gap-y-12 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-b-12 ">
         {renderProjects()}
       </div>
     </div>
