@@ -14,7 +14,7 @@ const MediaDisplay: FC<MediaDisplayProps> = ({ image, video, alt, poster }) => {
     mediaElement = (
       <video
         className="
-        hight-auto md:pr-6 lg:pr-0 lg:max-w-full 
+        hight-auto lg:pr-0 lg:max-w-full 
         lg:grayscale transition-all duration-500 ease-in-out
         group-hover:grayscale-0"
         autoPlay

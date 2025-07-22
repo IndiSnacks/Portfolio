@@ -12,8 +12,8 @@ export default function Projects() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div key={index} className="flex flex-col md:flex-row lg:flex-col p-5 mb-12 md:mb-0 md:justify-center md:items-cente 
-               group
+              <div key={index} className="flex flex-col md:flex-row lg:flex-col lg:h-full p-5 mb-12 md:mb-0 
+                md:justify-center md:items-cente group
                transition-all duration-500 ease-in-out
                bg-[var(--light-color)] hover:bg-[var(--dark-color)]
                text-[var(--dark-color)] hover:text-[var(--light-color)]
@@ -24,11 +24,13 @@ export default function Projects() {
                   image={item.img}
                   alt={item.title} // Use item title as a fallback alt
                 />
-                <div className="">
-                  <div className="flex flex-row">
+                <div className="md:min-w-1/3">
+                  <div className="flex flex-row justify-between">
                     <h1 className="">{item.title}</h1>
-                    <h1 className="mx-2 font-normal"> | </h1>
-                    <h1 className="font-light">{item.year}</h1>
+                    <div className="flex flex-row items-center">
+                      <h1 className="mx-1 font-light md:text-end"> | </h1>
+                      <h1 className="font-light">{item.year}</h1>
+                    </div>
                   </div>
                   <h1 className="text-[#6B6B5D] group-hover:text-[var(--light-color)] 
                     transition-all duration-500 ease-in-out
