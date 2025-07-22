@@ -23,7 +23,7 @@ export const projectsData: projectData[] = [
   },
   {
     url: "../../public/notebook/Music Gen Model.html",
-    video: "../../public/vid/myvid.mov",
+    video: "../../public/vid/myvid.mp4",
     title: "ML Music Generator",
     year: "2025",
     role: "Mechiene Learning Engineer",
@@ -50,7 +50,7 @@ export const projectsData: projectData[] = [
   },
   {
     url: "https://github.com/ucsddesignco/frontiers24",
-    video: "../../public/vid/design frontiers 2024.mov",
+    video: "../../public/vid/design frontiers 2024.mp4",
     title: "Design Frontiers",
     year: "2024",
     role: "web developer",
