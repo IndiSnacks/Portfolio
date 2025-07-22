@@ -34,7 +34,7 @@ export const navLinks: NavLinkItem[] = [
   {
     id: 'resume',
     name: "RESUME",
-    path: "../../public/img/Sahil's_Resume.pdf",
+    path: "/img/Sahil's_Resume.pdf",
     type: "external",
   },
   {

@@ -14,7 +14,7 @@ export const projectsData: projectData[] = [
   {
     url: "https://github.com/ucsddesignco/frontiers25",
     github: "https://github.com/",
-    video: "../../public/vid/Design Frontiers 2025.mov",
+    video: "/vid/Design Frontiers 2025.mov",
     title: "Desgin Frontiers",
     year: "2025",
     role: "Web Developer",
@@ -22,8 +22,8 @@ export const projectsData: projectData[] = [
     discription: "esign Co's annual design-a-thon. For this site I implemented a database using MongoDB to store user data and connected it to our project with Next.JS. For the layout and styling we using React, and Tailwind. Lastly we implemented a login system using BetterAuth."
   },
   {
-    url: "../../public/notebook/Music Gen Model.html",
-    video: "../../public/vid/myvid.mp4",
+    url: "/notebook/Music Gen Model.html",
+    video: "/vid/myvid.mp4",
     title: "ML Music Generator",
     year: "2025",
     role: "Mechiene Learning Engineer",
@@ -32,7 +32,7 @@ export const projectsData: projectData[] = [
   },
   {
     url: "https://github.com/ucsddesignco/stride2024",
-    video: "../../public/vid/Stride 2025.mov",
+    video: "/vid/Stride 2025.mov",
     title: "Stride",
     year: "2025",
     role: "Web Developer",
@@ -41,7 +41,7 @@ export const projectsData: projectData[] = [
   },
   {
     url: "https://github.com/ucsddesignco/up-grade24",
-    video: "../../public/vid/Up-Grade 2024.mov",
+    video: "/vid/Up-Grade 2024.mov",
     title: "Up Grade",
     year: "2024",
     role: "Web Developer",
@@ -50,7 +50,7 @@ export const projectsData: projectData[] = [
   },
   {
     url: "https://github.com/ucsddesignco/frontiers24",
-    video: "../../public/vid/design frontiers 2024.mp4",
+    video: "/vid/design frontiers 2024.mp4",
     title: "Design Frontiers",
     year: "2024",
     role: "web developer",
@@ -59,7 +59,7 @@ export const projectsData: projectData[] = [
   },
   {
     url: "https://github.com/IndiSnacks/CSE167-HW4",
-    img: "../../public/img/ray-tracer-out.png",
+    img: "/img/ray-tracer-out.png",
     title: "Ray Tracer",
     year: "2023",
     role: "Graphic Engineer",
