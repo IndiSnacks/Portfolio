@@ -16,8 +16,8 @@ export const navLinks: NavLinks[] = [
   {
     id: 'resume',
     name: "RESUME",
-    path: "/resume",
-    type: "route",
+    path: "../../public/img/Sahil's_Resume.pdf",
+    type: "external",
   },
   {
     id: 'github',

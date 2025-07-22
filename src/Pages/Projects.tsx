@@ -1,68 +1,28 @@
+import { projectsData } from "../Data/projectsData";
+import MediaDisplay from "../Components/MediaDisplay";
+
 export default function Projects() {
-
-  const projectData = [
-    {
-      url: "https://ucsddesign.co/",
-      img: "../../public/img/test_img.png",
-      title: "Desgin Frontiers",
-      year: "2024",
-      role: "Web Developer",
-      letter: "D",
-      discription: "esgin Frontiers is Design Co's annual design-a-thon where students get to present their design ideas and impmetations to industry designers. We created this site using React, SCSS, Vite, and hosted it using vercel. For the project I contributed the astroid interactions and the styling for main pages"
-    },
-    {
-      url: "https://ucsddesign.co/",
-      img: "../../public/img/test_img.png",
-      title: "Desgin Frontiers",
-      year: "2024",
-      role: "Web Developer",
-      letter: "D",
-      discription: "esgin Frontiers is Design Co's annual design-a-thon where students get to present their design ideas and impmetations to industry designers. We created this site using React, SCSS, Vite, and hosted it using vercel. For the project I contributed the astroid interactions and the styling for main pages"
-    },
-    {
-      url: "https://ucsddesign.co/",
-      img: "../../public/img/test_img.png",
-      title: "Desgin Frontiers",
-      year: "2024",
-      role: "Web Developer",
-      letter: "D",
-      discription: "esgin Frontiers is Design Co's annual design-a-thon where students get to present their design ideas and impmetations to industry designers. We created this site using React, SCSS, Vite, and hosted it using vercel. For the project I contributed the astroid interactions and the styling for main pages"
-    },
-    {
-      url: "https://ucsddesign.co/",
-      img: "../../public/img/test_img.png",
-      title: "Desgin Frontiers",
-      year: "2024",
-      role: "Web Developer",
-      letter: "D",
-      discription: "esgin Frontiers is Design Co's annual design-a-thon where students get to present their design ideas and impmetations to industry designers. We created this site using React, SCSS, Vite, and hosted it using vercel. For the project I contributed the astroid interactions and the styling for main pages"
-    },
-
-  ];
-
   function renderProjects() {
-
     return (
       <>
-        {projectData.map((item, index) => {
+        {projectsData.map((item, index) => {
           return (
             <a
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div key={index} className="flex flex-col md:flex-row lg:flex-col p-5 mb-12 md:mb-0
+              <div key={index} className="flex flex-col md:flex-row lg:flex-col p-5 mb-12 md:mb-0 md:justify-center md:items-cente 
                group
                transition-all duration-500 ease-in-out
                bg-[var(--light-color)] hover:bg-[var(--dark-color)]
                text-[var(--dark-color)] hover:text-[var(--light-color)]
                shadow-lg 
               ">
-                <img
-                  className="hight-auto md:max-w-2/5 md:pr-6 lg:pr-0 lg:max-w-full lg:grayscale
-                   transition-all duration-500 ease-in-out
-                   group-hover:grayscale-0"
-                  src={item.img}
+                <MediaDisplay
+                  video={item.video}
+                  image={item.img}
+                  alt={item.title} // Use item title as a fallback alt
                 />
                 <div className="">
                   <div className="flex flex-row">
