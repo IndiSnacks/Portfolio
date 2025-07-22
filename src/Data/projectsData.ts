@@ -50,7 +50,7 @@ export const projectsData: projectData[] = [
   },
   {
     url: "https://github.com/ucsddesignco/frontiers24",
-    video: "/vid/design frontiers 2024.mp4",
+    video: "/vid/Design Frontiers 2024.mp4",
     title: "Design Frontiers",
     year: "2024",
     role: "web developer",
