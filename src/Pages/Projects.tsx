@@ -13,11 +13,11 @@ export default function Projects() {
               rel="noopener noreferrer"
             >
               <div key={index} className="flex flex-col md:flex-row lg:flex-col lg:h-full p-5 mb-12 md:mb-0 
-                md:justify-center md:items-cente group
+                md:justify-center md:items-cente group md:items-center
                transition-all duration-500 ease-in-out
                bg-[var(--light-color)] hover:bg-[var(--dark-color)]
                text-[var(--dark-color)] hover:text-[var(--light-color)]
-               shadow-lg 
+               shadow-xl hover:inset-ring hover:inset-ring-blue-800
               ">
                 <MediaDisplay
                   video={item.video}
