@@ -1,12 +1,30 @@
-interface NavLinks {
-  id: string,
-  name: string,
-  targetId?: string,
-  path?: string,
-  type: "scroll" | "route" | "external";
+interface NavLinkScroll {
+  id: string;
+  name: string;
+  type: "scroll";
+  targetId: string;
+  path?: never;
 }
 
-export const navLinks: NavLinks[] = [
+interface NavLinkRoute {
+  id: string;
+  name: string;
+  type: "route";
+  path: string;
+  targetId?: never;
+}
+
+interface NavLinkExternal {
+  id: string;
+  name: string;
+  type: "external";
+  path: string;
+  targetId?: never;
+}
+
+export type NavLinkItem = NavLinkScroll | NavLinkRoute | NavLinkExternal;
+
+export const navLinks: NavLinkItem[] = [
   {
     id: 'projects',
     name: "PROJECTS",
