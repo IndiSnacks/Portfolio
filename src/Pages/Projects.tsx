@@ -17,7 +17,7 @@ export default function Projects() {
                transition-all duration-500 ease-in-out
                bg-[var(--light-color)] hover:bg-[var(--dark-color)]
                text-[var(--dark-color)] hover:text-[var(--light-color)]
-               shadow-xl hover:inset-ring hover:inset-ring-blue-800
+               shadow-xl
               ">
                 <MediaDisplay
                   video={item.video}
