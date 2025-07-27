@@ -66,5 +66,14 @@ export const projectsData: projectData[] = [
     letter: "D",
     discription: "eveloped a ray traced graphics render using C++, and OpenGL. The program takes a txt file of geometry and renders them using a ray tracing algorithm. "
   },
+  {
+    url: "https://github.com/IndiSnacks/",
+    img: "/img/flying Game.gif",
+    title: "VR Flying Game",
+    year: "2023",
+    role: "Game Devloper",
+    letter: "U",
+    discription: "tilized Unity, and C# to build a flight simulator which allowed players to create custom point-to-point tracks in VR and race to set lap times."
+  },
 ];
 
