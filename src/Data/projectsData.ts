@@ -19,7 +19,7 @@ export const projectsData: projectData[] = [
     year: "2025",
     role: "Web Developer",
     letter: "D",
-    discription: "esign Co's annual design-a-thon. For this site I implemented a database using MongoDB to store user data and connected it to our project with Next.JS. For the layout and styling we using React, and Tailwind. Lastly we implemented a login system using BetterAuth."
+    discription: "esign Co's annual design-a-thon. We built a full-stack event registration platform for Design Co's annual design-a-thon using Next.js, MongoDB, and React with Tailwind CSS. Implemented secure user authentication with BetterAuth and database integration to manage participant data for 100+ attendees. Collaborated with designers and marketers to create an engaging user experience that streamlined event registration and information delivery"
   },
   {
     url: "/notebook/Music Gen Model.html",
@@ -28,7 +28,7 @@ export const projectsData: projectData[] = [
     year: "2025",
     role: "Mechiene Learning Engineer",
     letter: "D",
-    discription: "eveloped a machine learning model which conditionally generates symbolic music data (midi files). To create this model we using PyTorch, Python, SciKitLearn. "
+    discription: "eveloped an end-to-end neural music generation pipeline using PyTorch and Python that produces listenable ambient music with recognizable genre characteristics. Trained LSTM architecture on MIDI datasets with custom preprocessing workflows, achieving unconditional sequential music generation in just 2 weeks. "
   },
   {
     url: "https://github.com/ucsddesignco/stride2024",
@@ -36,8 +36,8 @@ export const projectsData: projectData[] = [
     title: "Stride",
     year: "2025",
     role: "Web Developer",
-    letter: "D",
-    discription: "esign Co's annual career annual design-forward career fair aiming to connect aspiring designers with company representatives. Built using React, Typescript, HTML, and, SCSS."
+    letter: "C",
+    discription: "reated a dynamic career fair website for Design Co's annual design-forward networking event connecting students with recruiters from Google, Deloitte, and Illumina. Built using React, TypeScript, and SCSS to showcase company profiles, schedule, and information"
   },
   {
     url: "https://github.com/ucsddesignco/up-grade24",
@@ -46,7 +46,7 @@ export const projectsData: projectData[] = [
     year: "2024",
     role: "Web Developer",
     letter: "U",
-    discription: "P-Grade is a 10-week summer internship program where students work with a local nonprofit to enhance their branding and increase community exposure. We created this site using React and integrated MatterJS to create some physics elements"
+    discription: "P-Grade is a 10-week summer internship program where students work with a local nonprofit to enhance their branding and increase community exposure. We developed an interactive website intergrating Matter.js elemnts to creating engaging physics based visuals."
   },
   {
     url: "https://github.com/ucsddesignco/frontiers24",
@@ -54,8 +54,8 @@ export const projectsData: projectData[] = [
     title: "Design Frontiers",
     year: "2024",
     role: "web developer",
-    letter: "D",
-    discription: "esign frontiers is design co's annual design-a-thon where students get to present their design ideas and imputations to industry designers. we created this site using react, scss, vite, and hosted it using vercel. for the project i contributed the astroid interactions and the styling for main pages."
+    letter: "C",
+    discription: "ontributed to Design Co's flagship design-a-thon website by implementing interactive asteroid animations and styling core pages using React, SCSS, and Vite. Focused on creating engaging visual interactions that reflected the event's creative and innovative spirit"
   },
   {
     url: "https://github.com/IndiSnacks/CSE167-HW4",
@@ -63,8 +63,8 @@ export const projectsData: projectData[] = [
     title: "Ray Tracer",
     year: "2023",
     role: "Graphic Engineer",
-    letter: "D",
-    discription: "eveloped a ray traced graphics render using C++, and OpenGL. The program takes a txt file of geometry and renders them using a ray tracing algorithm. "
+    letter: "B",
+    discription: "uilt a software ray tracer from scratch using C++ and OpenGL that renders complex 3D scenes with realistic lighting and shadows. Implemented core ray tracing algorithms with bounding box acceleration structures for spatial partitioning, enabling efficient rendering of geometric primitives."
   },
   {
     url: "https://github.com/IndiSnacks/",
@@ -72,8 +72,8 @@ export const projectsData: projectData[] = [
     title: "VR Flying Game",
     year: "2023",
     role: "Game Devloper",
-    letter: "U",
-    discription: "tilized Unity, and C# to build a flight simulator which allowed players to create custom point-to-point tracks in VR and race to set lap times."
+    letter: "D",
+    discription: "eveloped an immersive VR fligh gane using Unity and C# that allows players to create custom point-to-point racing tracks in virtual reality. Implemented intuitive VR controls and physics-based flight mechanics for aerial navigation and competitive lap timing."
   },
 ];
 
