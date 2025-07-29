@@ -14,7 +14,7 @@ export const projectsData: projectData[] = [
   {
     url: "https://github.com/ucsddesignco/frontiers25",
     github: "https://github.com/",
-    video: "/vid/Design Frontiers 2025.mov",
+    video: "/vid/Design Frontiers 2025.mp4",
     title: "Desgin Frontiers",
     year: "2025",
     role: "Web Developer",
@@ -32,7 +32,7 @@ export const projectsData: projectData[] = [
   },
   {
     url: "https://github.com/ucsddesignco/stride2024",
-    video: "/vid/Stride 2025.mov",
+    video: "/vid/Stride 2025.mp4",
     title: "Stride",
     year: "2025",
     role: "Web Developer",
@@ -41,7 +41,7 @@ export const projectsData: projectData[] = [
   },
   {
     url: "https://github.com/ucsddesignco/up-grade24",
-    video: "/vid/Up-Grade 2024.mov",
+    video: "/vid/Up-Grade 2024.mp4",
     title: "Up Grade",
     year: "2024",
     role: "Web Developer",
