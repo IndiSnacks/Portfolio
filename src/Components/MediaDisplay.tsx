@@ -22,7 +22,7 @@ const MediaDisplay: FC<MediaDisplayProps> = ({ image, video, alt, poster }) => {
         muted
         playsInline
         controls={false}
-        preload="auto"
+        preload="metadata"
         poster={poster}
       >
         <source src={video} type="video/mp4" />

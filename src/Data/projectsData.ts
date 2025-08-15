@@ -1,16 +1,26 @@
 interface projectData {
-  url: string,
-  github?: string,
-  img?: string,
-  video?: string,
-  title: string,
-  year: string,
-  role: string,
-  letter: string,
+  url: string;
+  github?: string;
+  img?: string;
+  video?: string;
+  title: string;
+  year: string;
+  role: string;
+  letter: string;
   discription: string;
 }
 
 export const projectsData: projectData[] = [
+  {
+    url: "https://vmamede.itch.io/perpetua",
+    img: "/img/perpetua.png",
+    title: "Perpetua",
+    year: "2025",
+    role: "Game Developer",
+    letter: "T",
+    discription:
+      "he GMTK game jam is one of the biggest game jams of the year. And this year with over 9000 games entered into the jam it was quite daunting to decide to join just a day before the jam went live. In the last moments before the jam I put together a dream team Victor our music/sfx artist and programer, Amerald our go to level designer and writer, and me our 3D artist and programer together we created something that I am really proud of!",
+  },
   {
     url: "https://github.com/ucsddesignco/frontiers25",
     github: "https://github.com/",
@@ -19,7 +29,8 @@ export const projectsData: projectData[] = [
     year: "2025",
     role: "Web Developer",
     letter: "D",
-    discription: "esign Co's annual design-a-thon. We built a full-stack event registration platform for Design Co's annual design-a-thon using Next.js, MongoDB, and React with Tailwind CSS. Implemented secure user authentication with BetterAuth and database integration to manage participant data for 100+ attendees. Collaborated with designers and marketers to create an engaging user experience that streamlined event registration and information delivery"
+    discription:
+      "esign Co's annual design-a-thon. We built a full-stack event registration platform for Design Co's annual design-a-thon using Next.js, MongoDB, and React with Tailwind CSS. Implemented secure user authentication with BetterAuth and database integration to manage participant data for 100+ attendees. Collaborated with designers and marketers to create an engaging user experience that streamlined event registration and information delivery",
   },
   {
     url: "/notebook/Music Gen Model.html",
@@ -28,7 +39,8 @@ export const projectsData: projectData[] = [
     year: "2025",
     role: "Mechiene Learning Engineer",
     letter: "D",
-    discription: "eveloped an end-to-end neural music generation pipeline using PyTorch and Python that produces listenable ambient music with recognizable genre characteristics. Trained LSTM architecture on MIDI datasets with custom preprocessing workflows, achieving unconditional sequential music generation in just 2 weeks. "
+    discription:
+      "eveloped an end-to-end neural music generation pipeline using PyTorch and Python that produces listenable ambient music with recognizable genre characteristics. Trained LSTM architecture on MIDI datasets with custom preprocessing workflows, achieving unconditional sequential music generation in just 2 weeks. ",
   },
   {
     url: "https://github.com/ucsddesignco/stride2024",
@@ -37,7 +49,8 @@ export const projectsData: projectData[] = [
     year: "2025",
     role: "Web Developer",
     letter: "C",
-    discription: "reated a dynamic career fair website for Design Co's annual design-forward networking event connecting students with recruiters from Google, Deloitte, and Illumina. Built using React, TypeScript, and SCSS to showcase company profiles, schedule, and information"
+    discription:
+      "reated a dynamic career fair website for Design Co's annual design-forward networking event connecting students with recruiters from Google, Deloitte, and Illumina. Built using React, TypeScript, and SCSS to showcase company profiles, schedule, and information",
   },
   {
     url: "https://github.com/ucsddesignco/up-grade24",
@@ -46,7 +59,8 @@ export const projectsData: projectData[] = [
     year: "2024",
     role: "Web Developer",
     letter: "U",
-    discription: "P-Grade is a 10-week summer internship program where students work with a local nonprofit to enhance their branding and increase community exposure. We developed an interactive website intergrating Matter.js elemnts to creating engaging physics based visuals."
+    discription:
+      "P-Grade is a 10-week summer internship program where students work with a local nonprofit to enhance their branding and increase community exposure. We developed an interactive website intergrating Matter.js elemnts to creating engaging physics based visuals.",
   },
   {
     url: "https://github.com/ucsddesignco/frontiers24",
@@ -55,7 +69,8 @@ export const projectsData: projectData[] = [
     year: "2024",
     role: "web developer",
     letter: "C",
-    discription: "ontributed to Design Co's flagship design-a-thon website by implementing interactive asteroid animations and styling core pages using React, SCSS, and Vite. Focused on creating engaging visual interactions that reflected the event's creative and innovative spirit"
+    discription:
+      "ontributed to Design Co's flagship design-a-thon website by implementing interactive asteroid animations and styling core pages using React, SCSS, and Vite. Focused on creating engaging visual interactions that reflected the event's creative and innovative spirit",
   },
   {
     url: "https://github.com/IndiSnacks/CSE167-HW4",
@@ -64,7 +79,8 @@ export const projectsData: projectData[] = [
     year: "2023",
     role: "Graphic Engineer",
     letter: "B",
-    discription: "uilt a software ray tracer from scratch using C++ and OpenGL that renders complex 3D scenes with realistic lighting and shadows. Implemented core ray tracing algorithms with bounding box acceleration structures for spatial partitioning, enabling efficient rendering of geometric primitives."
+    discription:
+      "uilt a software ray tracer from scratch using C++ and OpenGL that renders complex 3D scenes with realistic lighting and shadows. Implemented core ray tracing algorithms with bounding box acceleration structures for spatial partitioning, enabling efficient rendering of geometric primitives.",
   },
   {
     url: "https://github.com/IndiSnacks/",
@@ -73,7 +89,7 @@ export const projectsData: projectData[] = [
     year: "2023",
     role: "Game Devloper",
     letter: "D",
-    discription: "eveloped an immersive VR fligh gane using Unity and C# that allows players to create custom point-to-point racing tracks in virtual reality. Implemented intuitive VR controls and physics-based flight mechanics for aerial navigation and competitive lap timing."
+    discription:
+      "eveloped an immersive VR fligh gane using Unity and C# that allows players to create custom point-to-point racing tracks in virtual reality. Implemented intuitive VR controls and physics-based flight mechanics for aerial navigation and competitive lap timing.",
   },
 ];
-

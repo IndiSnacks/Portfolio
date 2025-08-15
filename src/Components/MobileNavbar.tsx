@@ -38,6 +38,7 @@ export default function MobileNavbar({ hamOpen, hamToggle }: MobileNavbarProps) 
               ) : item.type === 'route' ? (
                 <Link
                   to={item.path}
+                  onClick={handelHamburger}
                 >
                   <h1>{item.name}</h1>
                 </Link>
@@ -56,7 +57,7 @@ export default function MobileNavbar({ hamOpen, hamToggle }: MobileNavbarProps) 
   }
 
   return (
-    <div>
+    <div className="z-10">
       {hamOpen && (
         <div
           className="absolute inset-0"

@@ -28,8 +28,14 @@ export const navLinks: NavLinkItem[] = [
   {
     id: 'projects',
     name: "PROJECTS",
-    targetId: "projects",
-    type: "scroll",
+    path: "/",
+    type: "route",
+  },
+  {
+    id: 'about',
+    name: 'ABOUT ME',
+    path: '/about',
+    type: 'route'
   },
   {
     id: 'resume',
