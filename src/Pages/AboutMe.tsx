@@ -23,7 +23,7 @@ export default function AboutMe() {
             </li>
             <li>
               {" "}
-              <strong>Software Engineer Inter</strong> @ Center For Health
+              <strong>Software Engineer Intern</strong> @ Center For Health
               Design
             </li>
             <li>

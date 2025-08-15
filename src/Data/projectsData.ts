@@ -60,7 +60,7 @@ export const projectsData: projectData[] = [
     role: "Web Developer",
     letter: "U",
     discription:
-      "P-Grade is a 10-week summer internship program where students work with a local nonprofit to enhance their branding and increase community exposure. We developed an interactive website intergrating Matter.js elemnts to creating engaging physics based visuals.",
+      "P-Grade is a 10-week summer internship program where students work with a local nonprofit to enhance their branding and increase community exposure. We developed an interactive website integrating Matter.js elements to creating engaging physics based visuals.",
   },
   {
     url: "https://github.com/ucsddesignco/frontiers24",
