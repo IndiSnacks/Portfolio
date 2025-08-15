@@ -1,6 +1,3 @@
-import Navbar from "../Components/Navbar";
-import MobileNavbar from "../Components/MobileNavbar";
-
 export default function AboutMe() {
   return (
     <div id="about" className="h-fit mt-4 flex-col text-start z-0">
