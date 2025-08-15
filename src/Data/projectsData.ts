@@ -25,7 +25,7 @@ export const projectsData: projectData[] = [
     url: "https://github.com/ucsddesignco/frontiers25",
     github: "https://github.com/",
     video: "/vid/Design Frontiers 2025.mp4",
-    title: "Desgin Frontiers",
+    title: "Design Frontiers",
     year: "2025",
     role: "Web Developer",
     letter: "D",
@@ -37,7 +37,7 @@ export const projectsData: projectData[] = [
     video: "/vid/myvid.mp4",
     title: "ML Music Generator",
     year: "2025",
-    role: "Mechiene Learning Engineer",
+    role: "Machine Learning Engineer",
     letter: "D",
     discription:
       "eveloped an end-to-end neural music generation pipeline using PyTorch and Python that produces listenable ambient music with recognizable genre characteristics. Trained LSTM architecture on MIDI datasets with custom preprocessing workflows, achieving unconditional sequential music generation in just 2 weeks. ",
@@ -87,7 +87,7 @@ export const projectsData: projectData[] = [
     img: "/img/flying Game.gif",
     title: "VR Flying Game",
     year: "2023",
-    role: "Game Devloper",
+    role: "Game Developer",
     letter: "D",
     discription:
       "eveloped an immersive VR fligh gane using Unity and C# that allows players to create custom point-to-point racing tracks in virtual reality. Implemented intuitive VR controls and physics-based flight mechanics for aerial navigation and competitive lap timing.",
