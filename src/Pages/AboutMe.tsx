@@ -44,7 +44,13 @@ export default function AboutMe() {
             anything tech, career, games or even coffee just hit me up on <a href="https://www.linkedin.com/in/sahilgathe/"><u>LinkedIn</u></a>!
           </p>
         </div>
-        <img src="/img/grad_photo.JPG" alt="" className="w-[400px] h-[600px] ml-5"/>
+        <div className="mt-5 md:m-5 md:w-full relative aspect-[2/3]">
+          <img
+            src="/img/grad_photo.JPG"
+            alt="Sahil Gathe's graduation photo in front of a modern building"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );
