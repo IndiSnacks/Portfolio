@@ -37,7 +37,7 @@ export default function AboutMe() {
             </li>
           </ul>
           <p className="pt-4">
-            <span className="text-2xl">W</span>when I'm not working, you'll
+            <span className="text-2xl">W</span>hen I'm not working, you'll
             probably find me pulling all nighters for a game jam, lifting at the
             gym, brewing the best coffee, diving into movies (come say hi on
             Letterboxd!), or out cycling. I'm always open to chatting about
