@@ -19,7 +19,7 @@ export default function AboutMe() {
           <ul className="m-5">
             <li>
               {" "}
-              <strong>Software Engineer Intern</strong> @ Doceo
+              <strong>Fullstack Software Engineer</strong> @ Doceo
             </li>
             <li>
               {" "}
