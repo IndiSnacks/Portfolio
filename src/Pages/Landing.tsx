@@ -1,5 +1,3 @@
-import Mug from '../Components/Mug'
-
 export default function Landing() {
   return (
     <div
@@ -16,11 +14,10 @@ export default function Landing() {
           to blend my love for making games with web we interact with everyday.
         </p>
       </div>
-      <Mug />
-      {/* <img
+      <img
         className="w-1/4 h-auto max-sm:hidden pt-5 px-5"
         src="/img/Mug V2.png"
-      /> */}
+      />
     </div>
   );
 }

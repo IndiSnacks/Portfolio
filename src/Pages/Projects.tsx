@@ -8,7 +8,6 @@ export default function Projects() {
         {projectsData.map((item, index) => {
           return (
             <a
-              key={index}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
