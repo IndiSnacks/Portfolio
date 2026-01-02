@@ -48,8 +48,9 @@ export default function Mug() {
       if(!mounted) return;
 
       mug = gltf.scene;
-      mug.rotation.x = 0.5
-      mug.rotation.z = -.15
+      mug.rotation.x += 0.4
+      mug.rotation.z -= .15
+      mug.scale.set(3,3,3);
       scene.add(mug); 
       mug.updateMatrixWorld(true);
 
@@ -57,13 +58,29 @@ export default function Mug() {
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
       const maxDim = Math.max(size.x, size.y, size.z);
-      camera.position.set(center.x, center.y, center.z + maxDim * 1.75);
+      camera.position.set(center.x + 6, center.y, center.z + maxDim * 1.75);
       camera.lookAt(center);
 
+      animate();
       render.render(scene, camera);
     }, undefined, (error) => {
       console.error('error rendering 3JS: ', error);
     })
+
+    let animationFrameId: number | null = null;
+
+    const animate = () => {
+      //TODO: check mounting and then animate 
+      if(!mounted) return;
+
+      animationFrameId = requestAnimationFrame(animate);
+      
+      if(mug){
+        mug.rotation.y += 0.01;
+      }
+
+      render.render(scene, camera);
+    };
 
     const handleResize = () => {
       if(!containerRef.current) return;
@@ -76,10 +93,13 @@ export default function Mug() {
     };
     window.addEventListener('resize', handleResize);
 
+    // ==== Cleanup ====
+    //TODO: Add animation clean-up
     return () => {
       mounted = false;
       window.removeEventListener('resize', handleResize);
 
+      // ==== Render cleanup ====
       if (rendererRef.current) {
         const canvas = rendererRef.current.domElement;
         if (canvas && canvas.parentNode) {
@@ -90,6 +110,7 @@ export default function Mug() {
       }
       render.dispose();
 
+      // ==== Scene Cleanup ====
       if (sceneRef.current) {
         sceneRef.current.traverse((object) => {
           if (object instanceof THREE.Mesh) {
@@ -103,13 +124,18 @@ export default function Mug() {
         });
         sceneRef.current = null;
       }
+
+      // ==== Animation Cleanup
+      if(animationFrameId != null){
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className='w-2/3 max-sm:hidden pt-5 px-5'
+      className='w-3/4 h-full pt-5 px-5'
       style={{ aspectRatio: '1/1', overflow: 'visible'}} 
     />
   )
