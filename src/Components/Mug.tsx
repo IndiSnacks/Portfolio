@@ -68,7 +68,10 @@ export default function Mug() {
       console.error('error rendering 3JS: ', error);
     })
 
+
     let animationFrameId: number | null = null;
+    let count = 1;
+    const originalYPosition = 0;
 
     const animate = () => {
       //TODO: check mounting and then animate 
@@ -78,6 +81,12 @@ export default function Mug() {
       
       if(mug){
         mug.rotation.y += 0.01;
+        
+        const amplitude = 0.2; 
+        const speed = 2; 
+        
+        mug.position.y = originalYPosition + Math.sin(count * speed) * amplitude;
+        count+=0.01;
       }
 
       render.render(scene, camera);
@@ -136,7 +145,7 @@ export default function Mug() {
   return (
     <div
       ref={containerRef}
-      className='w-3/4 h-full pt-5 px-5'
+      className='w-3/4 h-full px-5'
       style={{ aspectRatio: '1/1', overflow: 'visible'}} 
     />
   )

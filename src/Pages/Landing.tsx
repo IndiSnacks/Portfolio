@@ -19,20 +19,9 @@ export default function Landing() {
           everyday.
         </p>
       </div>
-      <Suspense
-        fallback={
-          <img
-            className="w-1/4 h-auto max-sm:hidden pt-5 px-5"
-            src="/img/Mug V2.png"
-          />
-        }
-      >
+      <Suspense>
         <Mug />
       </Suspense>
-      {/* <img
-        className="w-1/4 h-auto max-sm:hidden pt-5 px-5"
-        src="/img/Mug V2.png"
-      /> */}
-    </div>
+      </div>
   );
 }
