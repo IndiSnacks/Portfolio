@@ -4,9 +4,15 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 export default function Mug() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const sceneRef = useRef<THREE.Scene | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
+    const existingCanvas = containerRef.current.querySelector('canvas');
+    if (existingCanvas) {
+      containerRef.current.removeChild(existingCanvas);
+    }
 
     let mounted = true;
     const width = containerRef.current.clientWidth;
@@ -19,6 +25,13 @@ export default function Mug() {
     render.setSize(width, height);
     render.setPixelRatio(window.devicePixelRatio);
     render.setClearColor(0x000000, 0);
+
+    render.domElement.style.width = '100%';
+    render.domElement.style.height = '100%';
+    render.domElement.style.display = 'block';
+    render.domElement.style.maxWidth = '100%';
+    render.domElement.style.maxHeight = '100%';
+
     containerRef.current.appendChild(render.domElement);
 
     const ambientLight = new THREE.AmbientLight(0xFFFAF0, 1); // Soft overall light
@@ -35,13 +48,16 @@ export default function Mug() {
       if(!mounted) return;
 
       mug = gltf.scene;
+      mug.rotation.x = 0.5
+      mug.rotation.z = -.15
       scene.add(mug); 
+      mug.updateMatrixWorld(true);
 
       const box = new THREE.Box3().setFromObject(mug);
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
       const maxDim = Math.max(size.x, size.y, size.z);
-      camera.position.set(center.x, center.y, center.z + maxDim * 1.5);
+      camera.position.set(center.x, center.y, center.z + maxDim * 1.75);
       camera.lookAt(center);
 
       render.render(scene, camera);
@@ -51,29 +67,50 @@ export default function Mug() {
 
     const handleResize = () => {
       if(!containerRef.current) return;
-      const width = containerRef.current.clientWidth;
-      const height = containerRef.current.clientHeight;
-      camera.aspect = width / height;
+      const newWidth = containerRef.current.clientWidth;
+      const newHeight = containerRef.current.clientHeight;
+      camera.aspect = newWidth / newHeight;
       camera.updateProjectionMatrix();
-      render.setSize(width, height);
+      render.setSize(newWidth, newHeight);
+      render.render(scene, camera);
     };
     window.addEventListener('resize', handleResize);
 
     return () => {
       mounted = false;
       window.removeEventListener('resize', handleResize);
-      if(containerRef.current && render.domElement.parentNode){
-        containerRef.current.removeChild(render.domElement);
+
+      if (rendererRef.current) {
+        const canvas = rendererRef.current.domElement;
+        if (canvas && canvas.parentNode) {
+          canvas.parentNode.removeChild(canvas);
+        }
+        rendererRef.current.dispose();
+        rendererRef.current = null;
       }
       render.dispose();
+
+      if (sceneRef.current) {
+        sceneRef.current.traverse((object) => {
+          if (object instanceof THREE.Mesh) {
+            object.geometry?.dispose();
+            if (Array.isArray(object.material)) {
+              object.material.forEach(material => material.dispose());
+            } else {
+              object.material?.dispose();
+            }
+          }
+        });
+        sceneRef.current = null;
+      }
     };
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className='w-1/4 h-auto max-sm:hidden pt-5 px-5'
-      style={{ aspectRatio: '1/1'}} 
+      className='w-2/3 max-sm:hidden pt-5 px-5'
+      style={{ aspectRatio: '1/1', overflow: 'visible'}} 
     />
   )
 }
