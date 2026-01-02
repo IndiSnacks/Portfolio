@@ -35,10 +35,10 @@ export default function Mug() {
 
     containerRef.current.appendChild(render.domElement);
 
-    const ambientLight = new THREE.AmbientLight(0xFFFAF0, 1); // Soft overall light
+    const ambientLight = new THREE.AmbientLight(0xFFFAF0, 0.75); // Soft overall light
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xFFFAF0, 4);
+    const directionalLight = new THREE.DirectionalLight(0xFFFAF0, 5);
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight); 
 
@@ -68,6 +68,13 @@ export default function Mug() {
       console.error('error rendering 3JS: ', error);
     })
 
+    // const initAnimation = () => {
+    //   if(!mug || !mounted) return; 
+
+
+
+
+    // }
 
     let animationFrameId: number | null = null;
     let count = 1;
@@ -80,7 +87,7 @@ export default function Mug() {
       animationFrameId = requestAnimationFrame(animate);
       
       if(mug){
-        mug.rotation.y += 0.01;
+        mug.rotation.y -= 0.01;
         
         const amplitude = 0.2; 
         const speed = 2; 
