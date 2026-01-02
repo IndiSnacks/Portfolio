@@ -9,6 +9,7 @@ export default function Mug() {
 
   useEffect(() => {
     if (!containerRef.current) return;
+
     const existingCanvas = containerRef.current.querySelector('canvas');
     if (existingCanvas) {
       containerRef.current.removeChild(existingCanvas);

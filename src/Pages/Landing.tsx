@@ -1,4 +1,6 @@
-import Mug from '../Components/Mug'
+import { lazy, Suspense } from "react";
+
+const Mug = lazy(() => import('../Components/Mug'));
 
 export default function Landing() {
   return (
@@ -12,11 +14,21 @@ export default function Landing() {
         <p className="pt-4 text-xl">
           <span className="text-4xl">I</span>'m am a developer and designer who
           just graduated form UC San Diego with a B.S in Computer Science. I
-          focus on crafting and programming unique experiences on the web. I like
-          to blend my love for making games with web we interact with everyday.
+          focus on crafting and programming unique experiences on the web. I
+          like to blend my love for making games with web we interact with
+          everyday.
         </p>
       </div>
-      <Mug />
+      <Suspense
+        fallback={
+          <img
+            className="w-1/4 h-auto max-sm:hidden pt-5 px-5"
+            src="/img/Mug V2.png"
+          />
+        }
+      >
+        <Mug />
+      </Suspense>
       {/* <img
         className="w-1/4 h-auto max-sm:hidden pt-5 px-5"
         src="/img/Mug V2.png"
