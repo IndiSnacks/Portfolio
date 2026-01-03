@@ -20,7 +20,7 @@ export default function Mug() {
     const height = containerRef.current.clientHeight;
     
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(25, width / height, 0.1, 1000);
 
     const render = new THREE.WebGLRenderer({alpha: true});
     render.setSize(width, height);
@@ -44,23 +44,31 @@ export default function Mug() {
 
     const loader = new GLTFLoader();
     let mug: THREE.Group | null = null;
+    let mugGroup: THREE.Group | null = null;
 
     loader.load('/models/Mug V2.gltf', (gltf) => {
       if(!mounted) return;
 
       mug = gltf.scene;
-      mug.rotation.x += 0.4
-      mug.rotation.z -= .15
-      mug.scale.set(3,3,3);
-      scene.add(mug); 
+      mug.rotation.x = -.15;
+      mug.rotation.z = -0.3;     
       mug.updateMatrixWorld(true);
 
       const box = new THREE.Box3().setFromObject(mug);
       const center = box.getCenter(new THREE.Vector3());
+      
+      mugGroup = new THREE.Group();
+      mug.position.sub(center);
+      mugGroup.add(mug); 
+      mugGroup.scale.set(0,0,0);
+      
       const size = box.getSize(new THREE.Vector3());
       const maxDim = Math.max(size.x, size.y, size.z);
-      camera.position.set(center.x + 6, center.y, center.z + maxDim * 1.75);
+      
+      camera.position.set(center.x + 4.5, center.y + 2, center.z + maxDim * -1);
       camera.lookAt(center);
+
+      scene.add(mugGroup); 
 
       animate();
       render.render(scene, camera);
@@ -68,13 +76,14 @@ export default function Mug() {
       console.error('error rendering 3JS: ', error);
     })
 
-    // const initAnimation = () => {
-    //   if(!mug || !mounted) return; 
+    let isScaled = false;
+    const initAnimation = () => {
+      if(!mugGroup || !mounted) return; 
+     
+      mugGroup.scale.set(1,1,1);
+      isScaled = true;
 
-
-
-
-    // }
+    }
 
     let animationFrameId: number | null = null;
     let count = 1;
@@ -84,13 +93,15 @@ export default function Mug() {
       //TODO: check mounting and then animate 
       if(!mounted) return;
 
+      if(!isScaled) initAnimation();
+
       animationFrameId = requestAnimationFrame(animate);
       
       if(mug){
         mug.rotation.y -= 0.01;
         
         const amplitude = 0.2; 
-        const speed = 2; 
+        const speed = 1.2; 
         
         mug.position.y = originalYPosition + Math.sin(count * speed) * amplitude;
         count+=0.01;
