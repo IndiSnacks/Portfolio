@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { useEffect, useRef} from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export default function Mug() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,7 +49,7 @@ export default function Mug() {
 
     loader.load(
       "/models/Mug V2.gltf",
-      (gltf) => {
+      (gltf: GLTF) => {
         if (!mounted) return;
 
         mug = gltf.scene;
@@ -76,7 +77,7 @@ export default function Mug() {
         render.render(scene, camera);
       },
       undefined,
-      (error) => {
+      (error: unknown) => {
         console.error("error rendering 3JS: ", error);
       }
     );
@@ -167,11 +168,11 @@ export default function Mug() {
 
       // ==== Scene Cleanup ====
       if (sceneRef.current) {
-        sceneRef.current.traverse((object) => {
+        sceneRef.current.traverse((object: THREE.Object3D) => {
           if (object instanceof THREE.Mesh) {
             object.geometry?.dispose();
             if (Array.isArray(object.material)) {
-              object.material.forEach((material) => material.dispose());
+              object.material.forEach((material: THREE.Material) => material.dispose());
             } else {
               object.material?.dispose();
             }
