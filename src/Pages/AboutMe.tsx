@@ -1,3 +1,5 @@
+import experienceData from '../Data/experience.json';
+
 export default function AboutMe() {
   return (
     <div id="about" className="h-fit mt-4 flex-col text-start z-0">
@@ -17,24 +19,14 @@ export default function AboutMe() {
             genuinely enjoy using.
           </p>
           <ul className="m-5">
-            <li>
-              {" "}
-              <strong>Fullstack Software Engineer</strong> @ Doceo
-            </li>
-            <li>
-              {" "}
-              <strong>Software Engineer Intern</strong> @ Center For Health
-              Design
-            </li>
-            <li>
-              {" "}
-              <strong>Student Software Engineer</strong> @ Center For Energy
-              Research
-            </li>
-            <li>
-              {" "}
-              <strong>Web Developer</strong> @ Design Co
-            </li>
+            {experienceData.map(({ title, company, year }) => (
+              <li className="flex justify-between" key={title + company + year}>
+                <span>
+                  <strong>{title}</strong> @ {company}
+                </span>
+                <span className="ml-4 min-w-fit text-right">| {year}</span>
+              </li>
+            ))}
           </ul>
           <p className="pt-4">
             <span className="text-2xl">W</span>hen I'm not working, you'll
