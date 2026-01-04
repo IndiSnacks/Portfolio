@@ -6,7 +6,7 @@ export default function Landing() {
   return (
     <div
       id="landing"
-      className="flex flex-col md:flex-row md:h-[70vh] mt-6 gap-8 items-center z-0"
+      className="flex flex-col md:flex-row md:h-[60vh] mt-6 gap-8 items-center z-0"
     >
       <div className=" flex-col text-start md:w-3/5 w-full">
         <h1 className="text-2xl lg:text-3xl ">HELLO I'M </h1>
